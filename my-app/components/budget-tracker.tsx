@@ -732,7 +732,7 @@ export function BudgetTracker() {
               </div>
               <div className="grid grid-cols-4 items-center gap-4">
                 <Label htmlFor="description" className="text-right">
-                  Description
+                  Desc.
                 </Label>
                 <Input
                   id="description"
