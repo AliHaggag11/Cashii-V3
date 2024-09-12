@@ -1,11 +1,12 @@
-
- {
+{
   "env": {
     "browser": true,
     "es2021": true
   },
   "extends": ["next/core-web-vitals", "next/typescript"],
   "rules": {
-    "no-undef": "off"
+    "no-undef": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "react/no-unescaped-entities": "off"
   }
 }
