@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Plus, Pencil, Trash2, Moon, Sun, Filter, X, Calendar, Check, AlertTriangle } from "lucide-react"
+import { Pencil, Trash2, Moon, Sun, Filter, Check, AlertTriangle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,7 +12,7 @@ import { useTheme } from "next-themes"
 import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid } from 'recharts'
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Progress } from "@/components/ui/progress"
-import { format, parseISO, startOfYear, endOfYear, eachDayOfInterval, eachMonthOfInterval, eachYearOfInterval, addMonths, isSameMonth, isBefore, isAfter } from 'date-fns'
+import { format, parseISO, startOfYear, endOfYear, eachDayOfInterval, eachMonthOfInterval, eachYearOfInterval, addMonths, isSameMonth } from 'date-fns'
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Checkbox } from "@/components/ui/checkbox"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
