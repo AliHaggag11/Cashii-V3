@@ -152,6 +152,7 @@ export function BudgetTracker() {
     toast({
       title: "Entry Added",
       description: "Your new entry has been added successfully.",
+      open: false
     })
   }
 
@@ -207,6 +208,7 @@ export function BudgetTracker() {
       toast({
         title: "Entry Updated",
         description: "Your entry has been updated successfully.",
+        open: false
       })
     }
   }
@@ -216,6 +218,7 @@ export function BudgetTracker() {
     toast({
       title: "Entry Deleted",
       description: "Your entry has been deleted successfully.",
+      open: false
     })
   }
 
@@ -224,6 +227,7 @@ export function BudgetTracker() {
     toast({
       title: "Installment Deleted",
       description: "Your installment has been deleted successfully.",
+      open: false
     })
   }
 
@@ -242,6 +246,7 @@ export function BudgetTracker() {
         title: "Error",
         description: "Please enter a description.",
         variant: "destructive",
+        open: false
       })
       return false
     }
@@ -250,6 +255,7 @@ export function BudgetTracker() {
         title: "Error",
         description: "Please enter an amount.",
         variant: "destructive",
+        open: false
       })
       return false
     }
@@ -258,6 +264,7 @@ export function BudgetTracker() {
         title: "Error",
         description: "Please select a date.",
         variant: "destructive",
+        open: false
       })
       return false
     }
@@ -266,6 +273,7 @@ export function BudgetTracker() {
         title: "Error",
         description: "Please enter an installment period.",
         variant: "destructive",
+        open: false
       })
       return false
     }
@@ -278,6 +286,7 @@ export function BudgetTracker() {
         title: "Error",
         description: "Please enter a goal amount.",
         variant: "destructive",
+        open: false
       })
       return
     }
@@ -292,6 +301,7 @@ export function BudgetTracker() {
     toast({
       title: "Goal Added",
       description: "Your new budget goal has been added successfully.",
+      open: false
     })
   }
 
@@ -315,6 +325,7 @@ export function BudgetTracker() {
       toast({
         title: "Goal Updated",
         description: "Your budget goal has been updated successfully.",
+        open: false
       })
     }
   }
@@ -324,6 +335,7 @@ export function BudgetTracker() {
     toast({
       title: "Goal Deleted",
       description: "Your budget goal has been deleted successfully.",
+      open: false
     })
   }
 
@@ -473,6 +485,7 @@ export function BudgetTracker() {
           toast({
             title: "Congratulations!",
             description: "You've completed all installments for this entry!",
+            open: false
           })
         }
 
@@ -502,6 +515,7 @@ export function BudgetTracker() {
         title: "Error",
         description: "Please enter your name.",
         variant: "destructive",
+        open: false
       })
     }
   }

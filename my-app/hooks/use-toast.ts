@@ -2,11 +2,8 @@
 
 // Inspired by react-hot-toast library
 import * as React from "react"
+import { ToastActionElement, ToastProps } from '@/components/ui/toast'
 
-import type {
-  ToastActionElement,
-  ToastProps,
-} from "@/components/ui/toast"
 
 const TOAST_LIMIT = 5 // Increased limit
 const TOAST_REMOVE_DELAY = 5000 // Reduced default delay
@@ -15,8 +12,12 @@ type ToasterToast = ToastProps & {
   id: string
   title?: React.ReactNode
   description?: React.ReactNode
+  variant?: React.ReactNode
   action?: ToastActionElement
   duration?: number // Allow custom duration per toast
+  open: boolean
+  onOpenChange?: (open: boolean) => void
+
 }
 
 const actionTypes = {
