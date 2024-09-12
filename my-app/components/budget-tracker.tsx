@@ -691,7 +691,7 @@ export function BudgetTracker() {
                       <Tooltip />
                       <Legend />
                       <Bar dataKey="Income" fill="#82ca9d" />
-                      <Bar dataKey="Expenses" fill="#8884d8" />
+                      <Bar dataKey="Expenses" fill="#fc6e6e" />
                     </BarChart>
                   </ResponsiveContainer>
                 ) : (
