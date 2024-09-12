@@ -817,49 +817,31 @@ export function BudgetTracker() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {goals.map((goal) => {
-                const currentAmount = expensesByCategory[goal.category] || 0;
-                const isExceeded = currentAmount > goal.amount;
-                const progressPercentage = Math.min((currentAmount / goal.amount) * 100, 100);
-
-                return (
-                  <div key={goal.id} className="space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="flex-1 mr-4">
-                        <div className="flex justify-between items-center mb-2">
-                          <Label>{goal.category}</Label>
-                          <span>{formatCurrency(goal.amount)}</span>
-                        </div>
-                        <Progress
-                          value={progressPercentage}
-                          className={`h-2 ${isExceeded ? 'bg-red-500' : ''}`}
-                        />
-                        <p className="text-sm text-muted-foreground mt-1">
-                          {formatCurrency(currentAmount)} / {formatCurrency(goal.amount)}
-                        </p>
-                      </div>
-                      <div className="flex space-x-2">
-                        <Button variant="outline" size="icon" onClick={() => editGoal(goal)}>
-                          <Pencil className="h-4 w-4" />
-                        </Button>
-                        <Button variant="outline" size="icon" onClick={() => deleteGoal(goal.id)}>
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
-                      </div>
+              {goals.map(goal => (
+                <div key={goal.id} className="flex items-center justify-between">
+                  <div className="flex-1 mr-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <Label>{goal.category}</Label>
+                      <span>EGP {goal.amount.toFixed(2)}</span>
                     </div>
-                    {isExceeded && (
-                      <Alert variant="destructive">
-                        <AlertTriangle className="h-4 w-4" />
-                        <AlertTitle>Budget Exceeded</AlertTitle>
-                        <AlertDescription>
-                          You've exceeded your budget for {goal.category} by {formatCurrency(currentAmount - goal.amount)}.
-                        </AlertDescription>
-                      </Alert>
-                    )}
+                    <Progress
+                      value={(expensesByCategory[goal.category] || 0) / goal.amount * 100}
+                      className="h-2"
+                    />
+                    <p className="text-sm text-muted-foreground mt-1">
+                      EGP {expensesByCategory[goal.category] || 0} / EGP{goal.amount}
+                    </p>
                   </div>
-                );
-              })}
-
+                  <div className="flex space-x-2">
+                    <Button variant="outline" size="icon" onClick={() => editGoal(goal)}>
+                      <Pencil className="h-4 w-4" />
+                    </Button>
+                    <Button variant="outline" size="icon" onClick={() => deleteGoal(goal.id)}>
+                      <Trash2 className="h-4 w-4" />
+                    </Button>
+                  </div>
+                </div>
+              ))}
               <div className="grid grid-cols-3 gap-2">
                 <Select value={newGoalCategory} onValueChange={setNewGoalCategory}>
                   <SelectTrigger>
@@ -873,21 +855,18 @@ export function BudgetTracker() {
                     ))}
                   </SelectContent>
                 </Select>
-
                 <Input
                   type="number"
                   value={newGoalAmount}
                   onChange={(e) => setNewGoalAmount(e.target.value)}
                   placeholder="Amount"
                 />
-
                 <Button onClick={editingGoal ? updateGoal : addGoal}>
                   {editingGoal ? 'Update' : 'Add'} Goal
                 </Button>
               </div>
             </div>
           </CardContent>
-
         </Card>
       </div>
 
